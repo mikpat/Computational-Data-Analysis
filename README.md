@@ -3,8 +3,8 @@
 ## Introduction/Data description
 
 This project was done as a part of Computational Data Analysis course at DTU. At this course a dataset of unknown 
-origin was given and the goals were to create a predictive model. The project was part of an in-class competition, 
-which will achieve smallest:
+origin was given and the goals were to create a predictive model. The project was part of an in-class competition to 
+achieve the smallest:
 
 * root mean squared error(RMSE) on 1000 new observations
 * difference between estimated root mean squared error and actual RMSE.
@@ -68,21 +68,18 @@ on dataset #3 C=2.0.
 |Dataset          | Training Elastic Net      | CV Elastic Net   | Training Random Forest|CV Random Forest|Training SVM|CV SVM|
 |-----------------|:--------------------:|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| 
 |Dataset source #1| 1,866        | 3,041    |1,350|	3,528	|2,875	|3,690|
-|Dataset #2       | 1,867       | 3,043|1,326	|3,506	|2,805	|3,543
+|Dataset #2       | 1,867       | 3,043|1,326	|3,506	|2,805	|3,543|
 |Dataset #3 PCA   | 1,182          | 3,924|1,980	|5,202	|3,785	|4,160|
- 
+
+
 Generally, models performed worse with more data dimensionality reduction techniques. 
 As can be seen from grid search, models in this case adjusted hyperparameters and performed better 
 with all the information in the dataset. For the final model elastic net trained on the whole 
 dataset #1 was chosen as it had the lowest mean cross-validation RMSE.
 
 ## Model validation
-In order to validate model, it’s performance was evaluated on unseen test dataset, which consists of 30% of source dataset. 
-The chosen elastic net from model selection achieved (RMSE) = 2,938. 
-Rest of the values are only for comparison, since model selection is based on cross-validation sets. 
-One insight is that most of the (RMSE) from test sets are lower than cross-validation RMSE, which can suggest 
-that test set was easier than mean evaluation in k-folds and is not representative of the whole distribution.  
-However, choosing larger test set could lead to worse model selection as less data would be used in training.
+In order to validate model, it’s performance was evaluated on unseen test dataset, which consists of 30% of source dataset.
+The chosen elastic net from model selection achieved (RMSE) = 2,938. Rest of the values are only for comparison, since model selection is based on cross-validation sets. One insight is that most of the (RMSE) from test sets are lower than cross-validation RMSE, which can suggest that test set was easier than mean evaluation in k-folds and is not representative of the whole distribution. However, choosing larger test set could lead to worse model selection as less data would be used in training.
 
 |Dataset          | Test Elastic Net      | Test Random Forest   | Test SVM|
 |-----------------|:--------------------:|:-------------:|:-------------:|
